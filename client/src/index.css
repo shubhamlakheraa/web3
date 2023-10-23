@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Poppins&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+  background-color: #121519;
+  color: white;
+  
+}
+
+
+.swiper-slide{
+  height: auto !important
+}
+
+
+
+.gradient-border {
+  --borderWidth: 2px;
+  position: relative
+}
+
+.gradient-border:after {
+  content: "";
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg,#f79533,#f37055,#ef4e7b,#a166ab,#5073b8,#1098ad,#07b39b,#6fba82);
+  border-radius: calc(36px);
+  z-index: 0;
+  /* animation:animatedgradient 3s ease infinite alternate; */
+  background-size: 300% 300%;
+  -webkit-border-radius: calc(36px);
+  -moz-border-radius: calc(36px);
+  -ms-border-radius: calc(36px);
+  -o-border-radius: calc(36px);
+  -webkit-animation: animatedgradient 3s ease infinite alternate
+}
+
+#box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 200px;
+  color: white;
+  font-family: 'Raleway';
+  font-size: 2.5rem;
+}
+
+/* @-webkit-keyframes animatedgradient {
+  0% {
+      background-position: 0 50%
+  }
+
+  50% {
+      background-position: 100% 50%
+  }
+
+  to {
+      background-position: 0 50%
+  }
+} */
+
+@keyframes animatedgradient {
+  0% {
+      background-position: 0 50%
+  }
+
+  50% {
+      background-position: 100% 50%
+  }
+
+  to {
+      background-position: 0 50%
+  }
+}
+
+
+
+
