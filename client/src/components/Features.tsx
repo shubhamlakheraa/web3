@@ -1,6 +1,6 @@
 // import { motion } from "framer-motion";
 // import useOnScreen from "../hooks/useOnScreen";
-import { useState, useEffect, useRef, RefObject } from "react";
+import { useEffect } from "react";
 import feature1 from "../assets/feature-1.png"
 import feature2 from "../assets/feature-2.png"
 import feature3 from "../assets/feature-3.png"
