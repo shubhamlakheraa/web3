@@ -11,8 +11,12 @@ import discord from "../assets/discord.png"
 import AOS from "aos";
 import { useEffect } from 'react'
 import 'aos/dist/aos.css';
+import useResponsive from '../hooks/useResponsive'
 
 const Testimonials = () => {
+
+
+  const { isDesktop } = useResponsive()
 
 
     useEffect(() => {
@@ -85,32 +89,88 @@ const Testimonials = () => {
 
     return (
       <>
-        <div className="bg-[#3d88da] rounded-[2rem] mt-[3rem] mb-[3rem]  mx-[3rem]">
+        <div
+          className={`bg-[#3d88da] rounded-[2rem] mt-[3rem] mb-[3rem] ${
+            !isDesktop ? "mx-3  " : "mx-[3rem]"
+          } `}
+        >
+          <div
+            className={` ${
+              !isDesktop ? "py-5 px-2" : "flex items-center justify-center "
+            }     `}
+          >
+            {!isDesktop ? (
+              <div
+                className={`${!isDesktop ? "text-center px-4" : "ml-[2rem]"}`}
+              >
+                <h2
+                  className={`font-semibold font-outfit ${
+                    !isDesktop ? "text-[1.6rem] " : "text-[2rem]"
+                  }  mb-[2rem]`}
+                >
+                  Join other top projects
+                  <br />
+                  pushing boundaries 🙌
+                </h2>
 
-          <div className="flex items-center justify-center ">
-            <div className="grid grid-cols-3 gap-4 max-w-[558px] w-100 m-5">
+                <p
+                  className={`font-outfit font-normal text-base mb-[1.5rem] pb-[1rem] ${
+                    !isDesktop ? "text-center" : ""
+                  } `}
+                >
+                  We are live across 150+ global projects helping them acquire &{" "}
+                  {isDesktop ? <br /> : ""}
+                  engage quality users for their platform.
+                </p>
+              </div>
+            ) : (
+              ""
+            )}
+            <div
+              className={` ${
+                !isDesktop ? "grid-cols-2" : "grid-cols-3"
+              }   grid gap-4 max-w-[558px] w-100 m-5`}
+            >
               {grid}
             </div>
 
-            <div className="ml-[2rem]">
-              <h2 className="font-semibold font-outfit text-[2rem] mb-[2rem]">
-                Join other top projects
-                <br />
-                pushing boundaries 🙌
-              </h2>
+            {isDesktop ? (
+              <div className="ml-[2rem]">
+                <h2 className="font-semibold font-outfit text-[2rem] mb-[2rem]">
+                  Join other top projects
+                  <br />
+                  pushing boundaries 🙌
+                </h2>
 
-              <p className="font-outfit font-normal text-base mb-[1.5rem] pb-[1rem]">
-                We are live across 150+ global projects helping them acquire &<br />
-                engage quality users for their platform.
-              </p>
+                <p className="font-outfit font-normal text-base mb-[1.5rem] pb-[1rem]">
+                  We are live across 150+ global projects helping them acquire &
+                  <br />
+                  engage quality users for their platform.
+                </p>
 
-              <button className="text-[#434a57]  font-outfit bg-white px-[2rem]  py-[1rem]  text-base font-semibold rounded-[50rem] ">
-
+                <button className="text-[#434a57]  font-outfit bg-white px-[2rem]  py-[1rem]  text-base font-semibold rounded-[50rem] ">
+                  <span>Discord</span>
+                  <img
+                    src={discord}
+                    width={25}
+                    height={25}
+                    className="ml-3 inline-block"
+                  />
+                </button>
+              </div>
+            ) : (
+              <div className={`${!isDesktop ? "flex items-center justify-center my-10  " : ""}`}>
+              <button className={`text-[#434a57]  font-outfit bg-white px-[2rem]  py-[1rem]  text-base font-semibold rounded-[50rem] ${!isDesktop ? "w-[90%]" : ""} `}>
                 <span>Discord</span>
-                <img src={discord} width={25} height={25} className='ml-3 inline-block'  />
-                
+                <img
+                  src={discord}
+                  width={25}
+                  height={25}
+                  className="ml-3 inline-block"
+                />
               </button>
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </>

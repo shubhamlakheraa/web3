@@ -1,26 +1,27 @@
+import useResponsive from "../hooks/useResponsive";
+
+
+
+
 const Offer = () => {
+
+    const { isDesktop } = useResponsive()
+
+
+
     return (
         <>
-        <div className="my-[10rem]  ">
-            <p className="text-center font-semibold font-outfit text-[55px] mb-[3rem]">What we offer ?</p>
+        <div className={`my-[10rem]   `}>
+            <p className={`text-center font-semibold font-outfit ${ !isDesktop ? "text-[35px]" : "text-[55px] "} mb-[3rem]`}>What we offer ?</p>
 
-            <div className="flex items-center justify-center">
+            <div className={`${!isDesktop ? "" : "flex items-center justify-center "}  `}>
 
-                {/* <div className="border-2 relative after:absolute bg-[#1D1F20] after:bg-gradient-10 after:content-[''] after:z-[-1] 
-                after:animate-[bordergradient_ease_alternate_infinite_3s] after:bg-3">
-                    <p className="text-[1.5rem]">
-                    Auto-Verification Quests
-                    </p>
+             
 
-                    <p className="text-[1rem]">
-                        On-chain, Socials, Content creation, Trading contests, Quizzes, Product onboarding, Custom integrations, and more.
-                    </p>
-                </div> */}
-
-                    <div className="gradient-border m-5" id="box">
+                    <div className={`gradient-border my-5 ${!isDesktop ? "max-w-[340px] ml-4" : ""} `} id="box">
                     
-                    <div className="h-[100%] w-[100%] rounded-[36px] border-0 bg-[#121519] z-10 px-[2.375rem] py-[2.375rem]">
-                    <p className="text-[1.5rem] font-outfit mb-[1rem]">
+                    <div className={`h-[100%] w-[100%] rounded-[36px] border-0 bg-[#121519] z-10 ${!isDesktop ? "px-[28.5px] py-[28.5px] text-center" : "px-[2.375rem] py-[2.375rem] "}  `}>
+                    <p className={` ${!isDesktop ? "text-[1.25rem]" : "text-[1.5rem]"}  text-[1.5rem] font-outfit mb-[1rem]`}>
                     Auto-Verification Quests
                     </p>
 
@@ -31,10 +32,10 @@ const Offer = () => {
                     </div>
                 </div>
 
-                <div className="gradient-border m-5" id="box">
+                <div className={`gradient-border my-5 ${!isDesktop ? "max-w-[340px] ml-4" : "mx-5"}`} id="box">
                     
-                    <div className="h-[100%] w-[100%] rounded-[36px] border-0 bg-[#121519] z-10 px-[2.375rem] py-[2.375rem]">
-                    <p className="text-[1.5rem] font-outfit mb-[1rem]">
+                    <div className={`h-[100%] w-[100%] rounded-[36px] border-0 bg-[#121519] z-10 ${!isDesktop ? "px-[28.5px] py-[28.5px] text-center" : "px-[2.375rem] py-[2.375rem]"}`}>
+                    <p className={` ${!isDesktop ? "text-[1.25rem]" : "text-[1.5rem]"} font-outfit mb-[1rem]`}>
                     Multiple Gasless Rewards
                     </p>
 
@@ -45,10 +46,10 @@ const Offer = () => {
                     </div>
                 </div>
 
-                <div className="gradient-border" id="box">
+                <div className={`gradient-border ${!isDesktop ? "max-w-[340px] ml-4" : ""}`} id="box">
                     
-                    <div className="h-[100%] w-[100%] rounded-[36px] border-0 bg-[#121519] z-10 px-[2.375rem] py-[2.375rem] ">
-                    <p className="text-[1.5rem] font-outfit mb-[1rem]">
+                    <div className={`h-[100%] w-[100%] rounded-[36px] border-0 bg-[#121519] z-10 ${!isDesktop ? "px-[28.5px] py-[28.5px] text-center" : "px-[2.375rem] py-[2.375rem]"} `}>
+                    <p className={` ${!isDesktop ? "text-[1.25rem]" : "text-[1.5rem]"} font-outfit mb-[1rem]`}>
                     Intract Community Support
                     </p>
 

@@ -1,5 +1,5 @@
 import './App.css'
-import Navbar from './components/Navbar'
+import Navbr from './components/Navbar'
 import Intro from './components/Intro'
 import Investor from './components/Investor'
 import Offer from './components/Offer'
@@ -16,7 +16,7 @@ function App() {
       
 
     
-     <Navbar />
+     <Navbr />
      <Intro />
      <Investor />
      <Offer />
